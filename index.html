@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidad de Distribución Exclusiva - Natural Freshly en Panamá</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Freshly Corporate Blue" - Using a deep blue as the primary color to match the brand logo, with a natural green as a secondary accent. -->
+    <!-- Application Structure Plan: A single-page application with a fixed top navigation bar for easy access to key sections. The structure flows from a high-level opportunity overview to detailed specifics of the portfolio and the alliance, ending with clear, actionable next steps. This non-linear but guided structure allows a potential partner to explore the information at their own pace, focusing on what matters most to them, which is more effective than a linear document for a business proposal. -->
+    <!-- Visualization & Content Choices: 
+        1. Report Info: Company Profile (Experience, Revenue, Portfolio Size). Goal: Inform & Impress. Viz/Method: Key metrics highlighted in cards, dynamic number counters, and an image of the facilities. Interaction: Numbers animate on scroll. Justification: Creates a modern, engaging way to highlight key figures and provide visual proof of infrastructure. Library: Vanilla JS.
+        2. Report Info: Product Portfolio (4 lines, various forms). Goal: Organize & Explore. Viz/Method: Interactive tabs for each product line. Interaction: User clicks a tab to dynamically display the relevant product categories. Justification: Manages the complexity of a 600-item portfolio, making it digestible and easy to navigate without overwhelming the user. Library: Vanilla JS.
+        3. Report Info: Alliance Responsibilities. Goal: Compare & Clarify. Viz/Method: A side-by-side two-column layout with a subtle background watermark image. Interaction: None. Justification: Provides a clear, direct comparison of partner commitments vs. company support, with a thematic background image enhancing brand identity. Method: HTML/Tailwind Flexbox.
+        4. Report Info: Next Steps. Goal: Guide & Action. Viz/Method: A numbered, vertical timeline/process flow diagram. Interaction: None. Justification: Clearly outlines the path to partnership, making it feel structured and achievable. Method: HTML/Tailwind CSS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <nav id="navbar" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-3 items-center h-20">
+                <div>
+                    <!-- Espacio izquierdo -->
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://www.naturalfreshly.com.co/img/logo_pie.jpg" alt="Logo de Natural Freshly" class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex justify-end">
+                    <div class="flex items-baseline space-x-4">
+                        <a href="#oportunidad" class="nav-link text-slate-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-blue-700">La Oportunidad</a>
+                        <a href="#portafolio" class="nav-link text-slate-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-blue-700">Portafolio</a>
+                        <a href="#alianza" class="nav-link text-slate-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-blue-700">La Alianza</a>
+                        <a href="#pasos" class="nav-link text-slate-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-blue-700">Próximos Pasos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <section id="oportunidad" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-800 leading-tight">Sea el Representante Exclusivo de <span class="text-blue-800">Natural Freshly</span> en Panamá</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-600">Le extendemos una invitación para forjar una alianza estratégica y liderar la distribución de un portafolio con más de 35 años de éxito y calidad comprobada en el mercado de productos naturales.</p>
+                
+                <div class="mt-12">
+                    <img src="https://www.naturalfreshly.com.co/datos_admin/uploads_contenidos/imagenes/foto2_vision.jpg" 
+                         alt="Instalaciones de la planta de Natural Freshly" 
+                         class="w-full max-w-5xl mx-auto rounded-lg shadow-lg"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1200x400/e2e8f0/475569?text=Instalaciones+de+Natural+Freshly';">
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-blue-800">Trayectoria Sólida</h3>
+                        <p class="mt-2 text-slate-600">Fundada en 1987, con décadas de experiencia y confianza en el sector de salud y bienestar.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-blue-800">Facturación Robusta</h3>
+                        <p class="mt-2 text-slate-600">Ingresos anuales superiores a los $33 millones de dólares, demostrando una alta demanda y solidez financiera.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-xl text-blue-800">Calidad Certificada</h3>
+                        <p class="mt-2 text-slate-600">Contamos con certificaciones INVIMA, BPM (GMP) e ICA que garantizan los más altos estándares de producción.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Nuestra Magnitud en Cifras</h2>
+                    <p class="max-w-2xl mx-auto text-slate-600 mb-8">Estos datos reflejan la escala y la estabilidad de nuestra operación, una base sólida para una expansión exitosa en Panamá.</p>
+                    <div id="stats-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <p class="text-5xl md:text-6xl font-bold text-blue-700" id="stat-references">0</p>
+                            <h4 class="mt-2 text-lg text-slate-500">Referencias de Portafolio</h4>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                             <p class="text-5xl md:text-6xl font-bold text-blue-700" id="stat-experience">0</p>
+                            <h4 class="mt-2 text-lg text-slate-500">Años de Experiencia</h4>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                             <p class="text-5xl md:text-6xl font-bold text-blue-700" id="stat-revenue">0</p>
+                            <h4 class="mt-2 text-lg text-slate-500">Facturación Anual (USD)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portafolio" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800">Un Portafolio Diverso y Adaptable</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Con más de 600 referencias, ofrecemos una gama de productos diseñados para satisfacer las necesidades clave del mercado panameño. Explore nuestras líneas principales para descubrir el potencial.</p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                        <button data-tab="fitoterapeuticos" class="tab-btn bg-blue-700 text-white px-4 py-2 rounded-md font-medium">Fitoterapéuticos</button>
+                        <button data-tab="suplementos" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-md font-medium">Suplementos Dietarios</button>
+                        <button data-tab="cosmeticos" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-md font-medium">Cosméticos Naturales</button>
+                        <button data-tab="veterinaria" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-md font-medium">Línea Veterinaria</button>
+                    </div>
+
+                    <div id="portfolio-content" class="bg-white p-8 rounded-lg shadow-md min-h-[300px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="alianza" class="py-20 bg-white relative overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <img src="https://www.naturalfreshly.com.co/datos_admin/uploads_contenidos/imagenes/foto1_vision.jpg" 
+                     alt="Marca de agua de Natural Freshly" 
+                     class="w-1/2 h-1/2 object-contain opacity-5"
+                     onerror="this.style.display='none'">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800">Estructura de la Alianza Estratégica</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Buscamos una relación de beneficio mutuo. A continuación, detallamos las responsabilidades y el respaldo dentro de esta sociedad.</p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-slate-50/80 backdrop-blur-sm p-8 rounded-lg border border-slate-200">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Compromisos del Socio en Panamá</h3>
+                        <ul class="space-y-3 text-slate-600 list-disc list-inside">
+                            <li>Gestión de registros sanitarios locales.</li>
+                            <li>Importación, nacionalización y almacenamiento.</li>
+                            <li>Distribución en canales estratégicos (farmacias, retail, etc.).</li>
+                            <li>Ejecución de marketing y acciones promocionales.</li>
+                            <li>Relacionamiento con gremio médico y puntos de venta.</li>
+                            <li>Gestión legal y comercial de la marca en el país.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50/80 backdrop-blur-sm p-8 rounded-lg border border-green-200">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4">Respaldo de Natural Freshly</h3>
+                        <ul class="space-y-3 text-green-700 list-disc list-inside">
+                            <li>Acceso al portafolio completo con precios preferenciales.</li>
+                            <li>Transferencia de marca, material técnico y de marketing.</li>
+                            <li>Apoyo técnico y formación continua para su equipo.</li>
+                            <li>Capacidad de manufactura ágil para responder a la demanda.</li>
+                            <li>Innovación constante en el desarrollo de productos.</li>
+                            <li>Acuerdo de exclusividad para proteger su inversión.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pasos" class="py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800">Próximos Pasos para Iniciar</h2>
+                    <p class="mt-4 text-lg text-slate-600">Proponemos un proceso claro y estructurado para formalizar nuestra alianza.</p>
+                </div>
+
+                <div class="mt-12 flow-root">
+                    <ul class="-mb-8">
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-200" aria-hidden="true"></span>
+                                <div class="relative flex space-x-3">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-blue-700 flex items-center justify-center ring-8 ring-slate-50">
+                                            <span class="text-white font-bold">1</span>
+                                        </span>
+                                    </div>
+                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                        <div>
+                                            <p class="text-lg font-medium text-slate-700">Reunión Exploratoria</p>
+                                            <p class="text-slate-500">Conocernos y alinear visiones sobre el potencial del mercado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-200" aria-hidden="true"></span>
+                                <div class="relative flex space-x-3">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-blue-700 flex items-center justify-center ring-8 ring-slate-50">
+                                            <span class="text-white font-bold">2</span>
+                                        </span>
+                                    </div>
+                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                        <div>
+                                            <p class="text-lg font-medium text-slate-700">Análisis de Mercado y Producto</p>
+                                            <p class="text-slate-500">Envío de muestras y material para evaluar la adaptación al mercado panameño.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-200" aria-hidden="true"></span>
+                                <div class="relative flex space-x-3">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-blue-700 flex items-center justify-center ring-8 ring-slate-50">
+                                            <span class="text-white font-bold">3</span>
+                                        </span>
+                                    </div>
+                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                        <div>
+                                            <p class="text-lg font-medium text-slate-700">Presentación del Plan de Lanzamiento</p>
+                                            <p class="text-slate-500">Revisión de la estrategia de entrada y comercialización propuesta por el socio.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="relative">
+                                <div class="relative flex space-x-3">
+                                    <div>
+                                        <span class="h-8 w-8 rounded-full bg-blue-700 flex items-center justify-center ring-8 ring-slate-50">
+                                            <span class="text-white font-bold">4</span>
+                                        </span>
+                                    </div>
+                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                        <div>
+                                            <p class="text-lg font-medium text-slate-700">Firma y Ejecución</p>
+                                            <p class="text-slate-500">Formalización del acuerdo de distribución y ejecución de las primeras órdenes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <img src="https://www.naturalfreshly.com.co/img/logo_pie.jpg" alt="Logo de Natural Freshly en pie de página" class="h-16 mx-auto mb-4">
+            <p class="text-slate-300">Construyendo un futuro más saludable, juntos.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioData = {
+                fitoterapeuticos: {
+                    title: 'Línea de Fitoterapéuticos',
+                    description: 'Soluciones terapéuticas basadas en los principios activos de plantas medicinales, con eficacia comprobada para diversas condiciones de salud.',
+                    areas: ['Salud digestiva', 'Sistema inmune', 'Cuidado articular', 'Relajación y estrés'],
+                    forms: ['Cápsulas', 'Jarabes', 'Cremas', 'Softgels']
+                },
+                suplementos: {
+                    title: 'Línea de Suplementos Dietarios',
+                    description: 'Fórmulas avanzadas con vitaminas, minerales y nutrientes esenciales para complementar la dieta y apoyar el bienestar general.',
+                    areas: ['Energía y vitalidad', 'Control de peso', 'Salud ósea', 'Defensas'],
+                    forms: ['Cápsulas', 'Polvos', 'Sachets', 'Softgels']
+                },
+                cosmeticos: {
+                    title: 'Línea de Cosméticos Naturales',
+                    description: 'Productos para el cuidado de la piel y la belleza que combinan ingredientes de origen natural con ciencia para resultados visibles y saludables.',
+                    areas: ['Cuidado facial', 'Cuidado corporal', 'Antienvejecimiento', 'Protección solar'],
+                    forms: ['Cremas', 'Geles', 'Soluciones']
+                },
+                veterinaria: {
+                    title: 'Línea Veterinaria Pets and Cats®',
+                    description: 'Productos dedicados al cuidado y bienestar de las mascotas, formulados con ingredientes naturales y seguros para perros y gatos.',
+                    areas: ['Cuidado articular', 'Salud digestiva', 'Pelaje y piel', 'Suplementos'],
+                    forms: ['Jarabes', 'Soluciones', 'Polvos']
+                }
+            };
+
+            const portfolioContent = document.getElementById('portfolio-content');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
+            function updatePortfolioContent(tab) {
+                const data = portfolioData[tab];
+                if (!data) return;
+
+                portfolioContent.innerHTML = `
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">${data.title}</h3>
+                    <p class="text-slate-600 mb-6">${data.description}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 mb-2">Áreas de Enfoque:</h4>
+                            <ul class="space-y-1 text-slate-500 list-disc list-inside">
+                                ${data.areas.map(area => `<li>${area}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 mb-2">Formas Farmacéuticas:</h4>
+                            <ul class="space-y-1 text-slate-500 list-disc list-inside">
+                                ${data.forms.map(form => `<li>${form}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('bg-blue-700', 'text-white');
+                        btn.classList.add('bg-white', 'text-slate-600');
+                    });
+                    button.classList.add('bg-blue-700', 'text-white');
+                    button.classList.remove('bg-white', 'text-slate-600');
+                    updatePortfolioContent(button.dataset.tab);
+                });
+            });
+
+            updatePortfolioContent('fitoterapeuticos');
+
+            const animateValue = (obj, start, end, duration, isCurrency = false) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    if (isCurrency) {
+                        obj.innerHTML = `$${value}M+`;
+                    } else {
+                        obj.innerHTML = `${value}+`;
+                    }
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            const statsContainer = document.getElementById('stats-container');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const references = document.getElementById('stat-references');
+                        const experience = document.getElementById('stat-experience');
+                        const revenue = document.getElementById('stat-revenue');
+                        
+                        animateValue(references, 0, 600, 2000);
+                        animateValue(experience, 0, 35, 2000);
+                        animateValue(revenue, 0, 33, 2000, true);
+                        
+                        observer.unobserve(statsContainer);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(statsContainer);
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbar = document.getElementById('navbar');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        const navbarHeight = navbar.offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
